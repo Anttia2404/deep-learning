@@ -1,0 +1,24 @@
+model_name: mesoinception4
+pretrained: false
+num_classes: 2
+dropout: 0.5
+input_size: 256
+
+data_root: ./data/FaceForensics++
+manipulation: Deepfakes
+compression: c0
+batch_size: 75
+num_epochs: 30
+num_frames_train: 270
+num_frames_eval: 270
+lr: 0.001
+weight_decay: 0.0
+scheduler: reduce_on_plateau
+loss_name: cross_entropy
+label_smoothing: 0.0
+num_workers: 0
+checkpoint_dir: ./checkpoints
+early_stopping_patience: 10
+seed: 42
+use_video_dataset: false
+detector_backend: mtcnn
